@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/92d27cddf1.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <link href="../dist/output.css" rel="stylesheet" />
+  </head>
+  <body>
+    <nav class="container py-5 px-5 md:px-0 md:py-10">
+      <div class="flex">
+        <h1 class="mr-auto font-bold">WOWOROOM</h1>
+        <div class="dropdownButton text-2xl md:hidden">
+          <i class="fa-solid fa-bars"></i>
+        </div>
+        <ul class="hidden md:flex">
+          <a href="#ourPros" class="hover:text-purple-500">
+            <li class="pl-12">床墊優勢</li>
+          </a>
+          <a href="#testimonial" class="hover:text-purple-500">
+            <li class="pl-12">好評推薦</li>
+          </a>
+
+          <a href="#shippingMethod" class="hover:text-purple-500">
+            <li class="pl-12">運送方式</li>
+          </a>
+
+          <a href="#orderNow" class="hover:text-purple-500">
+            <li class="pl-12">立即預定</li>
+          </a>
+        </ul>
+      </div>
+      <ul
+        class="dropdownMenu hidden py-1 text-center text-gray-700 dark:text-gray-200"
+      >
+        <li>
+          <a href="ourPros" class="block py-2 px-4 hover:bg-gray-100"
+            >床墊優勢</a
+          >
+        </li>
+        <li>
+          <a href="#testimonial" class="block py-2 px-4 hover:bg-gray-100"
+            >好評推薦</a
+          >
+        </li>
+        <li>
+          <a href="#shippingMethod" class="block py-2 px-4 hover:bg-gray-100"
+            >運送方式</a
+          >
+        </li>
+        <li>
+          <a href="#orderNow" class="block py-2 px-4 hover:bg-gray-100"
+            >立即預定</a
+          >
+        </li>
+      </ul>
+    </nav>
+
+    <div class="mb-8 h-10 bg-black"></div>
+
+    <div
+      class="container relative mb-14 h-96 bg-cover"
+      style="background-image: url(../static/img/3ewLAKn.png)"
+    >
+      <p class="absolute bottom-10 left-10 text-3xl text-white">
+        窩窩家居
+        <br />
+        跟您一起品味生活
+      </p>
+    </div>
+
+    <section class="container mb-14" id="ourPros">
+      <h2 class="mb-7 text-center text-3xl">床墊優勢</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 md:gap-4">
+        <div class="mb-8 md:mb-8">
+          <div
+            class="mb-2 h-40 bg-cover"
+            style="background-image: url(../static/img/tR426y5.png)"
+          ></div>
+          <p class="text-center">原物料環保</p>
+        </div>
+
+        <div class="mb-8 md:mb-0">
+          <div
+            class="mb-2 h-40 bg-cover"
+            style="background-image: url(../static/img/Fd2MiBb.png)"
+          ></div>
+          <p class="text-center">好收納</p>
+        </div>
+
+        <div class="">
+          <div
+            class="mb-2 h-40 bg-cover"
+            style="background-image: url(../static/img/5n1uTFh.png)"
+          ></div>
+          <p class="text-center">好組裝</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-gray-100 py-12">
+      <h2 class="mb-7 text-center text-3xl">家具比較</h2>
+      <div class="container">
+        <table class="mx-auto">
+          <tr class="border-b-2 border-gray-200">
+            <td class="py-2 font-normal"></td>
+            <th class="py-2 px-6 font-normal md:text-xl" scope="col">
+              <span>窩窩系統模組家具</span>
+            </th>
+            <th class="py-2 px-6 font-normal md:text-xl" scope="col">
+              <span class="text-gray-500">組合式家具</span>
+            </th>
+            <th class="py-2 px-6 font-normal md:text-xl" scope="col">
+              <span class="text-gray-500">實木家具</span>
+            </th>
+          </tr>
+          <tr class="border-b-2 border-gray-200 text-center">
+            <th class="py-2 px-5 font-normal md:text-xl" scope="row">
+              <span>可單人自行組裝</span>
+            </th>
+            <td><i class="fa-solid fa-check text-purple-700"></i></td>
+            <td class="text-gray-500">不一定</td>
+            <td></td>
+          </tr>
+
+          <tr class="border-b-2 border-gray-200 text-center">
+            <th class="py-2 px-5 font-normal md:text-xl" scope="row">
+              <span>可多次重複拆裝</span>
+            </th>
+            <td><i class="fa-solid fa-check text-purple-700"></i></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="border-b-2 border-gray-200 text-center">
+            <th class="py-2 px-5 font-normal md:text-xl" scope="row">
+              <span>床墊規格彈性大</span>
+            </th>
+            <td><i class="fa-solid fa-check text-purple-700"></i></td>
+            <td class="text-gray-500">不一定</td>
+            <td class="text-gray-500">不一定</td>
+          </tr>
+          <tr class="border-b-2 border-gray-200 text-center">
+            <th class="py-2 px-5 font-normal md:text-xl" scope="row">
+              <span>材質可長久使用</span>
+            </th>
+            <td><i class="fa-solid fa-check text-purple-700"></i></td>
+            <td></td>
+            <td><i class="fa-solid fa-check text-purple-700"></i></td>
+          </tr>
+
+          <tr class="border-b-2 border-gray-200 text-center">
+            <th class="py-2 px-5 font-normal md:text-xl" scope="row">
+              <span>小客車即可搬運</span>
+            </th>
+            <td><i class="fa-solid fa-check text-purple-700"></i></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </table>
+      </div>
+    </section>
+
+    <section class="mb-8 bg-purple-900 py-14" id="testimonial">
+      <h2 class="mb-7 text-center text-3xl text-white">好評推薦</h2>
+      <div class="testimonialWall container overflow-x-scroll">
+        <ul class="testimonialList grid-cols-5-overflow mb-5 grid gap-7"></ul>
+
+        <ul
+          class="testimonialList grid-cols-5-overflow ml-24 mb-5 grid gap-7"
+        ></ul>
+      </div>
+
+      <div class="container"></div>
+    </section>
+
+    <section id="shippingMethod">
+      <h2 class="mb-7 text-center text-3xl">運送方式</h2>
+      <div class="container mb-20 flex items-center justify-center">
+        <div class="relative">
+          <div
+            class="flex h-14 w-14 justify-center rounded-full border-2 border-solid border-black md:h-20 md:w-20"
+          >
+            <i
+              class="fa-solid fa-cart-shopping flex items-center text-2xl md:text-4xl"
+            ></i>
+          </div>
+          <p
+            class="absolute left-0 right-0 mx-auto text-center text-xs md:text-base"
+          >
+            STEP 1. <br />
+            選購商品
+          </p>
+        </div>
+        <div class="px-4 md:px-10"><i class="fa-solid fa-caret-right"></i></div>
+        <div class="relative">
+          <div
+            class="flex h-14 w-14 justify-center rounded-full border-2 border-solid border-black md:h-20 md:w-20"
+          >
+            <i
+              class="fa-solid fa-list flex items-center text-2xl md:text-4xl"
+            ></i>
+          </div>
+          <p
+            class="absolute left-0 right-0 mx-auto text-center text-xs md:text-base"
+          >
+            STEP 2. <br />
+            填寫資料
+          </p>
+        </div>
+        <div class="px-4 md:px-10"><i class="fa-solid fa-caret-right"></i></div>
+        <div class="relative">
+          <div
+            class="flex h-14 w-14 justify-center rounded-full border-2 border-solid border-black md:h-20 md:w-20"
+          >
+            <i
+              class="fa-solid fa-envelope-circle-check flex items-center text-2xl md:text-4xl"
+            ></i>
+          </div>
+          <p
+            class="absolute left-0 right-0 mx-auto text-center text-xs md:text-base"
+          >
+            STEP 3. <br />
+            預定成功
+          </p>
+        </div>
+        <div class="px-4 md:px-10"><i class="fa-solid fa-caret-right"></i></div>
+        <div class="relative">
+          <div
+            class="flex h-14 w-14 justify-center rounded-full border-2 border-solid border-black md:h-20 md:w-20"
+          >
+            <i
+              class="fa-solid fa-thumbs-up flex items-center text-2xl md:text-4xl"
+            ></i>
+          </div>
+          <p
+            class="absolute left-0 right-0 mx-auto text-center text-xs md:text-base"
+          >
+            STEP 4. <br />
+            好蒿爽爽
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="cateSelector container mb-16 px-5 md:p-0">
+      <select class="mb-5 w-full rounded-lg border py-3 pl-4 md:w-72" name="">
+        <option value="全部" selected>全部</option>
+        <option value="床架">床架</option>
+        <option value="收納">收納</option>
+        <option value="窗簾">窗簾</option>
+      </select>
+      <ul class="productList -mx-4 flex flex-wrap gap-y-7"></ul>
+    </section>
+
+    <section class="mb-14 bg-gray-100 py-5 px-5 md:px-0">
+      <div class="cart container"></div>
+    </section>
+
+    <section id="orderNow">
+      <h2 class="mb-7 text-center text-3xl">填寫預定資料</h2>
+      <form class="mx-auto flex w-80 flex-col">
+        <div class="mb-5">
+          <label
+            for="customName"
+            class="mb-2 block text-sm font-medium text-gray-900"
+            >姓名</label
+          >
+          <input
+            type="text"
+            id="customName"
+            class="block w-full rounded border border-gray-300 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500"
+          />
+          <p class="hidden text-rose-500">必填</p>
+        </div>
+
+        <div class="mb-5">
+          <label
+            for="customCellphone"
+            class="mb-2 block text-sm font-medium text-gray-900"
+            >電話</label
+          >
+          <input
+            type="tel"
+            id="customCellphone"
+            class="block w-full rounded border border-gray-300 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500"
+          />
+          <p class="hidden text-rose-500">必填</p>
+        </div>
+
+        <div class="mb-5">
+          <label
+            for="customEmail"
+            class="mb-2 block text-sm font-medium text-gray-900"
+            >Email</label
+          >
+          <input
+            type="email"
+            id="customEmail"
+            class="block w-full rounded border border-gray-300 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500"
+          />
+          <p class="hidden text-rose-500">必填</p>
+        </div>
+
+        <div class="mb-5">
+          <label
+            for="customAddr"
+            class="mb-2 block text-sm font-medium text-gray-900"
+            >寄送地址</label
+          >
+          <input
+            type="text"
+            id="customAddr"
+            class="block w-full rounded border border-gray-300 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500"
+          />
+          <p class="hidden text-rose-500">必填</p>
+        </div>
+
+        <div class="mb-5">
+          <label
+            for="customPayment"
+            class="mb-2 block text-sm font-medium text-gray-900"
+            >寄送地址</label
+          >
+          <select
+            type="text"
+            id="customPayment"
+            class="block w-full rounded border border-gray-300 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500"
+          >
+            <option value="ATM" selected>ATM</option>
+            <option value="信用卡">信用卡</option>
+            <option value="超商付款">超商付款</option>
+          </select>
+          <p class="hidden text-rose-500">必填</p>
+        </div>
+
+        <div
+          class="cursor-pointer orderSubmit mx-auto inline-block rounded bg-black px-14 py-3  mb-5 text-center text-white"
+        >
+          送出預定資料
+        </div>
+        <p class="orderResult text-center mb-5 text-2xl font-bold"></p>
+      </form>
+    </section>
+
+    <div
+      class="fullSpinner fixed top-0 left-0 z-10 hidden h-full w-full bg-black/50"
+    >
+      <div role="status" class="flex h-full items-center justify-center">
+        <svg
+          class="mr-2 block h-8 w-8 animate-spin fill-gray-600 text-gray-200 dark:fill-gray-300 dark:text-gray-600"
+          viewBox="0 0 100 101"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z"
+            fill="currentColor"
+          />
+          <path
+            d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z"
+            fill="currentFill"
+          />
+        </svg>
+        <span class="sr-only">Loading...</span>
+      </div>
+    </div>
+
+    <script src="./testimonialData.js"></script>
+    <script src="./index.js"></script>
+    <script src="./formvalid.js"></script>
+  </body>
+</html>
