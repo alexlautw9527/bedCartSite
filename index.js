@@ -14,7 +14,7 @@ function createTestimonialItemHTML(
         <img src="./static/img/${itemUrl}" alt="" />
         <div class="w-72 bg-white py-3 pl-4">
             <div class="mb-2 flex items-center justify-start">
-            <img src="/static/img/${avatarUrl}" alt="" class="h-12 w-12" />
+            <img src="./static/img/${avatarUrl}" alt="" class="h-12 w-12" />
             <div class="ml-2">
                 <p>
                 <span>${userName}</span>
