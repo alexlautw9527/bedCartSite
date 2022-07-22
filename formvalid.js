@@ -6,8 +6,6 @@ formValidObj = {
   isCartExisting: false,
 };
 
-
-
 let customName = document.querySelector("#customName");
 customName.addEventListener("input", function (e) {
   const value = this.value;
@@ -73,63 +71,57 @@ customAddr.addEventListener("input", function (e) {
 
 console.log(formValidObj);
 
-
 let orderSubmit = document.querySelector(".orderSubmit");
 orderSubmit.addEventListener("click", async function (e) {
-    let cartRes = await pullCartList((isRender = false));
-    let orderResText = document.querySelector('.orderResult')
-    
-    formValidObj['isCartExisting'] = cartRes['data']['carts'].length>0
-   
-    let isAllVaild = Object.values(formValidObj).filter(item=>item===false).length===0
-    
-    if(isAllVaild){
-        let reqBody = {
-            "data": {
-              "user": {
-                "name": customName.value,
-                "tel": customCellphone.value,
-                "email": customEmail.value,
-                "address": customAddr.value,
-                "payment": customPayment.value
-              }
-            }
-          }
+  let cartRes = await pullCartList((isRender = false));
+  let orderResText = document.querySelector(".orderResult");
 
+  formValidObj["isCartExisting"] = cartRes["data"]["carts"].length > 0;
 
+  let isAllVaild =
+    Object.values(formValidObj).filter((item) => item === false).length === 0;
 
-        document.querySelector(".fullSpinner").classList.toggle("hidden");
-        let orderRes = await axios.post(`${domainUrl}/orders`,reqBody)
-        .catch((err) => {
-          console.log(err);
-        });
-        document.querySelector(".fullSpinner").classList.toggle("hidden");
-        console.log(orderRes['data']['status']===true)
-        if(orderRes['data']['status']===true){
-            orderResText.textContent = "成功送出訂單"
-            
-        } else {
-            orderResText.textContent = "訂單送出失敗" 
-        }
-        
-        
-         
-        pullCartList((isRender = true))
-        Array.from(document.querySelectorAll('input')).map(item=>item.value="")
-        console.log('ff')
-        
-    } else if(formValidObj['isCartExisting']===false){
-        orderResText.textContent = "購物車為空"
+  if (isAllVaild) {
+    let reqBody = {
+      data: {
+        user: {
+          name: customName.value,
+          tel: customCellphone.value,
+          email: customEmail.value,
+          address: customAddr.value,
+          payment: customPayment.value,
+        },
+      },
+    };
+
+    document.querySelector(".fullSpinner").classList.toggle("hidden");
+    let orderRes = await axios
+      .post(`${domainUrl}/orders`, reqBody)
+      .catch((err) => {
+        console.log(err);
+      });
+    document.querySelector(".fullSpinner").classList.toggle("hidden");
+    console.log(orderRes["data"]["status"] === true);
+    if (orderRes["data"]["status"] === true) {
+      orderResText.textContent = "成功送出訂單";
     } else {
-        orderResText.textContent = "請確認填寫資料" 
+      orderResText.textContent = "訂單送出失敗";
     }
 
+    pullCartList((isRender = true));
+    Array.from(document.querySelectorAll("input")).map(
+      (item) => (item.value = "")
+    );
+  } else if (formValidObj["isCartExisting"] === false) {
+    orderResText.textContent = "購物車為空";
+  } else {
+    orderResText.textContent = "請確認填寫資料";
+  }
 });
 
-let dropdownButton = document.querySelector('.dropdownButton')
-dropdownButton.addEventListener('click', function(e){
-    console.log(e.target)
-    let dropdownMenu = document.querySelector('.dropdownMenu')
-    dropdownMenu.classList.toggle('hidden')
-    
-})
+let dropdownButton = document.querySelector(".dropdownButton");
+dropdownButton.addEventListener("click", function (e) {
+  console.log(e.target);
+  let dropdownMenu = document.querySelector(".dropdownMenu");
+  dropdownMenu.classList.toggle("hidden");
+});

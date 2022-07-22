@@ -10,12 +10,14 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-    <link href="../dist/output.css" rel="stylesheet" />
+    <link href="./dist/output.css" rel="stylesheet" />
   </head>
   <body>
     <nav class="container py-5 px-5 md:px-0 md:py-10">
       <div class="flex">
-        <h1 class="mr-auto font-bold">WOWOROOM</h1>
+        <h1 class="mr-auto font-bold">
+          <a href="admin.html">WOWOROOM</a>
+        </h1>
         <div class="dropdownButton text-2xl md:hidden">
           <i class="fa-solid fa-bars"></i>
         </div>
@@ -340,11 +342,11 @@
         </div>
 
         <div
-          class="cursor-pointer orderSubmit mx-auto inline-block rounded bg-black px-14 py-3  mb-5 text-center text-white"
+          class="orderSubmit mx-auto mb-5 inline-block cursor-pointer rounded bg-black px-14 py-3 text-center text-white"
         >
           送出預定資料
         </div>
-        <p class="orderResult text-center mb-5 text-2xl font-bold"></p>
+        <p class="orderResult mb-5 text-center text-2xl font-bold"></p>
       </form>
     </section>
 

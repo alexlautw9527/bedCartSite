@@ -2,6 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  .orderTable td {
+    @apply border px-3 py-10;
+  }
+
+  .orderTable th {
+    @apply border px-3 text-center text-xl;
+  }
+}
+
 @layer utilities {
   .grid-cols-5-overflow {
     grid-template-columns: repeat(5, max-content);
